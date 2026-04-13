@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="student.css">
+</head>
+
+<body>
+    <div class="containers">
+        <div class="header">
+            <h2>Student Registration</h2>
+
+            <form class="form" id="studentregisterform">
+
+                <!-- Personal Information Section -->
+                <legend><i class="fa-solid fa-user"></i> Personal Information</legend>
+
+                <div class="form-controls">
+                    <label>First Name *</label>
+                    <input type="text" name="fname" class="form-input" id="fname" placeholder="John" autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>Last Name *</label>
+                    <input type="text" name="lname" id="lname" class="form-input" placeholder="Doe" autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" id="email" class="form-input" placeholder="john.doe@example.com"
+                        autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>Phone Number *</label>
+                    <input type="tel" name="phone" id="phone" class="form-input" placeholder="7000980717"
+                        autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>Date of Birth *</label>
+                    <input type="date" name="dob" id="dob" class="form-input" required>
+                </div>
+
+                <div class="form-controls">
+                    <label>Gender *</label>
+                    <div class="gender">
+                        <input class="form-checks-input" type="radio" name="gender" id="male" value="male"
+                            autocomplete="off">
+                        <label class="form-checks-label" for="male">Male</label>
+
+                        <input class="form-checks-input" type="radio" name="gender" id="female" value="female"
+                            autocomplete="off">
+                        <label class="form-checks-label" for="female">Female</label>
+
+                        <input class="form-checks-input" type="radio" name="gender" id="other" value="other"
+                            autocomplete="off">
+                        <label class="form-checks-label" for="other">Other</label>
+                    </div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <!-- Educational Background Section -->
+                <legend><i class="fa-solid fa-graduation-cap"></i> Educational Background</legend>
+
+                <div class="form-controls">
+                    <label>Highest Qualification *</label>
+                    <select class="form-select" id="qualification" name="qualification" autocomplete="off" required>
+                        <option value="" selected disabled>Select qualification</option>
+                        <option>10th Pass</option>
+                        <option>12th Pass</option>
+                        <option>Diploma</option>
+                        <option>Graduate (Bachelor's)</option>
+                        <option>Post Graduate (Master's)</option>
+                        <option>PhD</option>
+                    </select>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>Specialization/Stream</label>
+                    <input type="text" name="stream" id="stream" class="form-input" placeholder="e.g., Computer Science"
+                        autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>Year of Passing *</label>
+                    <input type="number" name="year" id="year" class="form-input" placeholder="e.g., 2023"
+                        autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>College Name</label>
+                    <input type="text" name="clgname" id="clgname" class="form-input" placeholder="Your College">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <!-- Course Details Section -->
+                <legend><i class="fa-solid fa-book"></i> Course Details</legend>
+
+                <div class="form-controls">
+                    <label>Select Course *</label>
+                    <select class="form-select" id="course" name="course" autocomplete="off" required>  
+                        <option value="" selected>Choose a Course</option>
+                        <option class="fw-medium fs-5 text-black" disabled>Programming Language</option>
+                        <option>C Programming</option>
+                        <option>C++ Programming</option>
+                        <option>Java Programming</option>
+                        <option>Python Programming</option>
+
+                        <option class="fw-medium fs-5 text-black" disabled>Web Development</option>
+                        <option>HTML, CSS, JavaScript, Bootstrap</option>
+                        <option>JavaScript</option>
+                        <option>React JS</option>
+                        <option>Angular</option>
+                        <option>Node.js</option>
+                        <option>MERN Stack</option>
+
+                        <option class="fw-medium fs-5 text-black" disabled>Data & AI</option>
+                        <option>Data Science</option>
+                        <option>Machine Learning</option>
+
+                        <option class="fw-medium fs-5 text-black" disabled>Mobile Development</option>
+                        <option>Android Development</option>
+                        <option>React Native</option>
+                    </select>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>Batch Preference *</label>
+                    <select class="form-select" id="batch" name="batch" autocomplete="off" required>
+                        <option value="" selected>Select batch timing</option>
+                        <option>Morning Batch (9 AM - 12 PM)</option>
+                        <option>Afternoon Batch (2 PM - 5 PM)</option>
+                        <option>Evening Batch (6 PM - 9 PM)</option>
+                        <option>Weekend Batch (Saturday & Sunday)</option>
+                    </select>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <!-- Address Details Section -->
+                <legend><i class="fa-solid fa-location-dot"></i> Address Details</legend>
+
+                <div class="form-controls">
+                    <label>Street Address *</label>
+                    <textarea class="form-control" id="address" name="address" rows="2"
+                        placeholder="Enter your complete address" autocomplete="off" required></textarea>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>City *</label>
+                    <input type="text" name="city" class="form-input" id="city" placeholder="e.g., Indore"
+                        autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>State *</label>
+                    <select class="form-select" id="qualification" name="" autocomplete="off" required>
+                        <option value="" selected disabled>Select state...</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Rajasthan</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Bihar</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Chhattisgarh</option>
+                        <option>Karnataka</option>
+                        <option>Punjab</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                    </select>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>PIN Code *</label>
+                    <input type="text" name="pincode" class="form-input" id="pincode" placeholder="e.g., 452001"
+                        autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <!-- Account Security Section -->
+                <legend><i class="fa-solid fa-shield-halved"></i> Account Security</legend>
+
+                <div class="form-controls">
+                    <label>Password *</label>
+                    <input type="password" name="password" class="form-input" id="password" placeholder="Enter password"
+                        autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="form-controls">
+                    <label>Confirm Password *</label>
+                    <input type="password" name="cpassword" id="cpassword" class="form-input"
+                        placeholder="Confirm password" autocomplete="off">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="mb-3 mt-5 form-check">
+                    <input type="checkbox" class="form-check-input border border-1 border-secondary" id="termsCheck" autocomplete="off" required>
+                    <label class="form-check-label" for="termsCheck">I agree to the <a href="#"
+                            class="text-secondary">Terms
+                            and
+                            Conditions</a> and <a href="#" class="text-secondary"> Privacy Policy</a></label>
+                    <small>Error Msg</small>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <button type="submit" class="sbtn fs-5 w-100"><i class="fa-solid fa-user-plus me-2"></i> Register
+                        Now </button>
+                </div>
+
+                <div class="para text-center mb-5">
+                    <p>Already have an account? <a href="#" class="text-decoration-none text-dark fw-medium"> Login
+                            here </a> <br> <span class="fw-bold">or</span>
+                    </p>
+
+                    <button type="button" class="btn btn-primary ps-3 pe-3 googlebtn">
+                        <a href="#" class="text-light text-decoration-none fw-medium" style="font-size: 15px;">Sign
+                            Up With Google account <img src="/Forms/google.png" style="width: 20px;" alt=""></a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- sweet alert design link -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Your existing Bootstrap JS script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="student.js"></script>
+
+</body>
+
+</html>

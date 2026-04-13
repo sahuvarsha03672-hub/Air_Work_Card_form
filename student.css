@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cadetblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.containers {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.1px 7.4px rgba(0, 0, 0, 0.080);
+    overflow: hidden;
+    max-width: 800px;
+    margin: 50px auto;
+    padding-bottom: 20px;
+}
+
+.header h2 {
+    color: #222;
+    font-size: 2rem;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-controls {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-controls label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-controls input,
+.form-controls select,
+.form-controls textarea {
+    width: 100%;
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    transition: border-color 0.3s;
+}
+
+.form-controls input:focus,
+.form-controls select:focus,
+.form-controls textarea:focus {
+    outline: 0;
+    border-color: #86cadb;
+}
+
+.gender {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.gender .form-checks-input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.gender .form-checks-label {
+    display: inline;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+.form-controls.success input,
+.form-controls.success select,
+.form-controls.success textarea {
+    border-color: #2ecc71;
+}
+
+.form-controls.error input,
+.form-controls.error select,
+.form-controls.error textarea {
+    border-color: #e74c3c;
+}
+
+.form-controls i {
+    position: absolute;
+    right: 12px;
+    top: 42px;
+    visibility: hidden;
+}
+
+.form-controls.success i.fa-circle-check {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-controls.error i.fa-circle-exclamation {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-controls small {
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.form-controls.error , .form-check.error small {
+    visibility: visible;
+}
+
+/* .form-check i {
+    position: absolute;
+    right: 23vw;
+    visibility: hidden;
+} */
+
+.form-check small {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    position: absolute;
+    right: 23vw;
+    visibility: hidden;
+}
+
+.sbtn {
+    background-color: rgb(0, 119, 255);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 0px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.sbtn:hover {
+    background-color: rgb(0, 100, 215);
+}
+
+.googlebtn {
+    background-color: #547fc4;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.googlebtn:hover {
+    background-color: #338dd6;
+}
+
+.googlebtn a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.googlebtn img {
+    width: 20px;
+    height: 20px;
+}
+
+legend {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-check {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .containers {
+        margin: 20px;
+        max-width: 100%;
+    }
+
+    .form {
+        padding: 20px;
+    }
+}

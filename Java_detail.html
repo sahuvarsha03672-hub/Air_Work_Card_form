@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Course - Build the Future</title>
+    <style>
+        /* --- General Styles & Variables --- */
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #f89820; /* Java-inspired orange */
+            --background-color: #f4f7f6;
+            --text-color: #333;
+            --light-text-color: #606770;
+            --card-bg-color: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 40px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        section {
+            padding: 20px 0;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/java/1920/800.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin-left: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #333;
+            transform: translateY(-3px);
+        }
+
+        /* --- Curriculum Section --- */
+        .curriculum {
+            background-color: var(--card-bg-color);
+        }
+        
+        .curriculum-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .curriculum-list li {
+            background: #f9f9f9;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .curriculum-list li:hover {
+            background: #f0f0f0;
+        }
+        .curriculum-list strong {
+            color: var(--primary-color);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .instructor-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Java Programming: Build the Future</h1>
+            <p>Master the world's most versatile programming language and create powerful, platform-independent applications.</p>
+            <a href="#" class="btn">Contact Us</a>
+            <a href="#" class="btn">Enroll Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Course Curriculum Section -->
+        <section id="curriculum" class="curriculum">
+            <div class="container">
+                <h2>Course Curriculum</h2>
+                <ul class="curriculum-list">
+                    <li><strong>Module 1:</strong> Introduction to Java, JVM, JDK, and Setting Up Your IDE</li>
+                    <li><strong>Module 2:</strong> Java Fundamentals: Syntax, Variables, Data Types, and Operators</li>
+                    <li><strong>Module 3:</strong> Control Flow: If-Else, Switch, and Loops</li>
+                    <li><strong>Module 4:</strong> OOP in Action: Classes, Objects, Constructors, and 'this' keyword</li>
+                    <li><strong>Module 5:</strong> The Four Pillars of OOP: Inheritance, Polymorphism, Encapsulation, Abstraction</li>
+                    <li><strong>Module 6:</strong> Exception Handling: Try, Catch, Finally, and Custom Exceptions</li>
+                    <li><strong>Module 7:</strong> Deep Dive into the Java Collections Framework</li>
+                    <li><strong>Module 8:</strong> File I/O, Streams, and Working with External Data</li>
+                    <li><strong>Module 9:</strong> Introduction to Spring Boot for Building Web APIs</li>
+                    <li><strong>Module 10:</strong> Capstone Project: Build a Complete Backend Application</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Java Programming Course. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
