@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Java Programming Course - Build the Future</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        /* --- General Styles & Variables --- */
         :root {
             --primary-color: #000000;
-            --secondary-color: #f89820; /* Java-inspired orange */
+            --primary-hover: #333333;
+            --secondary-color: #f89820;
+            --secondary-hover: #d9851e;
             --background-color: #f4f7f6;
             --text-color: #333;
             --light-text-color: #606770;
             --card-bg-color: #ffffff;
             --border-color: #e0e0e0;
+
+            --transition-speed: 0.3s;
         }
 
         body {
@@ -21,7 +28,6 @@
             margin: 0;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.6;
         }
 
         .container {
@@ -30,26 +36,27 @@
             padding: 20px 40px;
         }
 
-        h1, h2, h3 {
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
         h2 {
             font-size: 36px;
             text-align: center;
             margin-bottom: 30px;
         }
 
-        section {
-            padding: 20px 0;
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 0;
         }
 
-        /* --- Hero Section --- */
+        /* Hero */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/java/1920/800.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
+                url('https://picsum.photos/seed/java/1920/800.jpg');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: #fff;
             text-align: center;
             padding: 100px 20px;
@@ -59,42 +66,85 @@
             font-size: 48px;
             color: #fff;
             margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease-out;
         }
 
         .hero p {
-            font-size: 20px;
-            max-width: 600px;
+            font-size: 21px;
+            max-width: 700px;
             margin: 0 auto 30px auto;
+            color: #e0e0e0;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
+        .hero-actions {
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-custom {
+            background: var(--primary-color);
             color: #fff;
-            padding: 15px 30px;
-            border-radius: 8px;
+            padding: 12px 25px;
+            border-radius: 6px;
+            margin: 5px;
             text-decoration: none;
+            display: inline-block;
             font-weight: 600;
             font-size: 18px;
-            margin-left: 30px;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .btn:hover {
-            background-color: #333;
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
             transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* --- Curriculum Section --- */
+        .btn-secondary-custom {
+            background: var(--secondary-color);
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Curriculum */
         .curriculum {
             background-color: var(--card-bg-color);
         }
-        
+
         .curriculum-list {
             list-style: none;
             padding: 0;
             max-width: 800px;
-            margin: 0 auto;
+            margin: auto;
         }
 
         .curriculum-list li {
@@ -105,9 +155,17 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
+        .curriculum-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+        }
+
         .curriculum-list li:hover {
             background: #f0f0f0;
         }
+
         .curriculum-list strong {
             color: var(--primary-color);
         }
@@ -119,43 +177,51 @@
             text-align: center;
             padding: 20px;
         }
-        
-        /* --- Responsive Design --- */
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 20px;
+            .hero {
+                padding: 70px 15px;
             }
+
             .hero h1 {
-                font-size: 36px;
+                font-size: 32px;
             }
-            .instructor-profile {
-                flex-direction: column;
-                text-align: center;
+
+            .hero p {
+                font-size: 15px;
             }
-            .pricing-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-            .pricing-card.featured {
-                transform: scale(1);
+
+            .btn-custom {
+                width: 100%;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header class="hero">
         <div class="container">
             <h1>Java Programming: Build the Future</h1>
-            <p>Master the world's most versatile programming language and create powerful, platform-independent applications.</p>
-            <a href="#" class="btn">Contact Us</a>
-            <a href="#" class="btn">Enroll Now</a>
+            <p>Master the world's most versatile programming language and create powerful, platform-independent
+                applications.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#" class="btn-custom btn-secondary-custom">Contact Us</a>
+                <a href="#" class="btn-custom btn-primary-custom ">Enroll Now</a>
+            </div>
         </div>
     </header>
 
+    <!-- 
     <main>
-        <!-- Course Curriculum Section -->
         <section id="curriculum" class="curriculum">
             <div class="container">
                 <h2>Course Curriculum</h2>
@@ -163,8 +229,10 @@
                     <li><strong>Module 1:</strong> Introduction to Java, JVM, JDK, and Setting Up Your IDE</li>
                     <li><strong>Module 2:</strong> Java Fundamentals: Syntax, Variables, Data Types, and Operators</li>
                     <li><strong>Module 3:</strong> Control Flow: If-Else, Switch, and Loops</li>
-                    <li><strong>Module 4:</strong> OOP in Action: Classes, Objects, Constructors, and 'this' keyword</li>
-                    <li><strong>Module 5:</strong> The Four Pillars of OOP: Inheritance, Polymorphism, Encapsulation, Abstraction</li>
+                    <li><strong>Module 4:</strong> OOP in Action: Classes, Objects, Constructors, and 'this' keyword
+                    </li>
+                    <li><strong>Module 5:</strong> The Four Pillars of OOP: Inheritance, Polymorphism, Encapsulation,
+                        Abstraction</li>
                     <li><strong>Module 6:</strong> Exception Handling: Try, Catch, Finally, and Custom Exceptions</li>
                     <li><strong>Module 7:</strong> Deep Dive into the Java Collections Framework</li>
                     <li><strong>Module 8:</strong> File I/O, Streams, and Working with External Data</li>
@@ -175,10 +243,116 @@
         </section>
 
     </main>
+    -->
+
+    <!-- Curriculum -->
+    <section class="curriculum">
+        <div class="container">
+            <h2>Course Curriculum</h2>
+
+            <ul class="curriculum-list">
+
+                <li>
+                    <a data-bs-toggle="collapse" href="#module1">
+                        <strong>Module 1:</strong> Introduction to Java
+                    </a>
+
+                    <div class="collapse mt-2" id="module1">
+                        <div class="card card-body">
+
+                            <p><strong>Overview:</strong> Get started by understanding the Java ecosystem and setting up
+                                your development environment.</p>
+
+                            <p><strong>⏱ Duration:</strong> 2 days</p>
+
+                            <ul>
+                                <li>Java History</li>
+                                <li>JVM, JRE, JDK</li>
+                                <li>IDE Setup</li>
+                                <li>Hello World</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Java Programming Course. All Rights Reserved.</p>
+        © 2024 Java Programming Course. All Rights Reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script>
+        const modules = [
+            {
+                title: "Module 1: Introduction to Java",
+                duration: "2 days",
+                desc: "Get started by understanding the Java ecosystem and setting up your development environment.",
+                topics: ["Java History", "JVM vs JRE vs JDK", "Installing IntelliJ/Eclipse", "Hello World Program"]
+            },
+            {
+                title: "Module 2: Java Fundamentals",
+                duration: "3 days",
+                desc: "Learn the building blocks of Java programming including variables, data types, and operators.",
+                topics: ["Variables", "Data Types", "Operators", "Type Casting", "Strings"]
+            },
+            {
+                title: "Module 3: Control Flow",
+                duration: "4 days",
+                desc: "Understand how to control the execution of your programs using conditions and loops.",
+                topics: ["If-Else", "Switch", "For Loop", "While Loop", "Break & Continue"]
+            },
+            {
+                title: "Module 4: OOP Basics",
+                duration: "8 days",
+                desc: "Learn Object-Oriented Programming concepts using classes and objects.",
+                topics: ["Classes", "Objects", "Constructors", "this keyword", "Static vs Instance"]
+            },
+            {
+                title: "Module 5: OOP Advanced",
+                duration: "8 days",
+                desc: "Master advanced OOP concepts used in real-world applications.",
+                topics: ["Inheritance", "Polymorphism", "Encapsulation", "Abstraction"]
+            },
+            {
+                title: "Module 6: Exception Handling",
+                duration: "5 days",
+                desc: "Handle runtime errors effectively and make your application robust.",
+                topics: ["Try-Catch", "Finally", "Throw vs Throws", "Custom Exceptions"]
+            },
+            {
+                title: "Module 7: Java Collections",
+                duration: "7 days",
+                desc: "Work with powerful data structures provided by Java.",
+                topics: ["List", "Set", "Map", "ArrayList vs LinkedList", "HashMap"]
+            },
+            {
+                title: "Module 8: File Handling",
+                duration: "4 days",
+                desc: "Learn how to read and write data from files and external sources.",
+                topics: ["File Class", "Streams", "BufferedReader", "File Writing"]
+            },
+            {
+                title: "Module 9: Spring Boot",
+                duration: "10 days",
+                desc: "Build powerful backend applications using Spring Boot.",
+                topics: ["Spring Boot Setup", "REST API", "Dependency Injection", "Database Connection"]
+            },
+            {
+                title: "Module 10: Final Project",
+                duration: "5 days",
+                desc: "Build a complete backend application using all concepts learned.",
+                topics: ["Project Planning", "API Design", "Database Schema", "Authentication", "Deployment"]
+            }
+        ];
+
+  
+    </script> -->
+
 </body>
+
 </html>
